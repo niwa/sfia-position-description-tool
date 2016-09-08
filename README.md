@@ -1,6 +1,8 @@
 SFIA Position Description Tool
 ============
 
-This tool has been developed by the Nation Institute of Water and Atmospheric Research New Zealand, with copy provided by the [SFIA Foundiation](https://www.sfia-online.org "SFIA Foundation")
+A position description generator based on the SFIA Framework. Select the skills and levels you want using the check-boxes then export the list for use in position descriptions. Try it (https://niwa.github.io/sfia-position-description-tool "online").
 
-Please feel free to use and distribute this web too freely, but please keep this ReadMe included and intact.
+This tool has been developed by the National Institute of Water and Atmospheric Research New Zealand, with copy provided by the [SFIA Foundiation](https://www.sfia-online.org "SFIA Foundation")
+
+The source code is released under an Attribution-NonCommercial 3.0  NZ Creative Commons License (https://creativecommons.org/licenses/by-nc/3.0/nz/deed.en "CC BY-NC 3.0")
