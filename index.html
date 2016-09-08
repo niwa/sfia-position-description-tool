@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html >
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NIWA | SFIA - Position Description Generator</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css" >
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    </head>
+    <body>
+
+	    <nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<h1>SFIA Position Description Generator</h1> 
+				</div>
+			</div>
+	    </nav>
+	
+	    <div id="pageContent" class="container-fluid">
+	        <div class="row">
+	            
+	            <div class="col-md-12">
+	            	<div class="panel panel-default">
+	            	  <div class="panel-heading">
+	            	    <h3 class="panel-title">Instructions</h3>
+	            	  </div>
+	            	  <div class="panel-body">
+	            	    <p>This is the NIWA position description generator tool, based on the <a href="https://www.sfia-online.org">SFIA 6 Framework</a>.</p>
+	            	    
+	                    <p>To start generating a position description, select the levels of the skill sets you need.</p>
+	
+	                    <p>You can view a description of any skill by hovering over it, or a description of any available skill level, by hovering over its respective checkbox.</p>
+	
+	                    <p>A formatted rendering of your selection will be generated for you at the end of the page, copy and paste this into a word processor to preserve the formatting.</p>
+	
+	                    <p>You also have the option to export your selection to a comma separated value (CSV) formatted document, or as HTML, which will be automatically downloaded for you. This feature has limitations in some browsers so we recommend you use an up to date version of chrome or firefox if you wish to use this feature, otherwise the file might be incorrectly named "Unknown", although the content will be the same.</p>
+	
+	                    <p>To save your summary for future use, simply bookmark the page after you have made your selection. The url bookmark will keep all of the necessary information and will update your selection should you return to it in future.</p>
+	            	  </div>
+	            	</div>
+	            </div>
+	            
+			</div>
+			
+			<div class="row">
+				
+				<div class="col-lg-8">
+					<div class="panel panel-default">
+						<table class="sfia-table">
+						    <thead>
+						        <tr>
+						            <th class="root_key_th">Category</th>
+						            <th class="sub_key_th">Sub Category</th>
+						            <th class="skill_key_th">Skill Set</th>
+						            <th class="skill_level_th">1</th>
+						            <th class="skill_level_th">2</th>
+						            <th class="skill_level_th">3</th>
+						            <th class="skill_level_th">4</th>
+						            <th class="skill_level_th">5</th>
+						            <th class="skill_level_th">6</th>
+						            <th class="skill_level_th">7</th>
+						        </tr>
+						    </thead>
+						    <tbody id="sfia-content">
+						    </tbody>
+						</table>
+					</div>
+				</div>
+	
+	            <div class="col-lg-4">
+	            	<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Formatted Output</h3>
+						</div>
+						<div class="panel-body">
+							<div id="sfia-output"></div>
+						</div>
+						<div class="panel-footer">
+						<a href="#" class="btn btn-default navbar-btn" onclick="exportCSV();event.preventDefault();">Export to CSV</a>
+						<a href="#" class="btn btn-default navbar-btn" onclick="exportHTML();event.preventDefault();">Export to HTML</a>
+						</div>
+	            	</div>
+	            </div>
+	            
+	        </div>  
+	    </div>
+        
+
+        <footer class="footer">
+			<div class="container">
+				<p class="text-muted text-center">Copyright 2016 NIWA</p>
+			</div>
+		</footer>
+        <script type="text/javascript" src="functions.js"></script>
+    </body>
+</html>
