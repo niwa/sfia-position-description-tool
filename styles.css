@@ -1,3 +1,7 @@
+* {
+  font-size: small;
+}
+
 header#top.navbar.navbar-default.navbar-static-top {
   min-height: 0;
 }
@@ -12,15 +16,9 @@ header#top.navbar.navbar-default.navbar-static-top {
   border-bottom: 1px solid grey;
 }
 
-.sfia-table thead {
-	display: table;
-	width: 100%;
-}
-
-.sfia-table tbody {
-	height: 600px;
-	display: block;
-	overflow: scroll;
+.table-responsive{
+  height: 600px;
+  overflow-y: auto;
 }
 
 .sfia-table thead tr {
@@ -46,10 +44,6 @@ header#top.navbar.navbar-default.navbar-static-top {
 
 .sfia-table tr td.col-checkbox:last-of-type {
   border-right: 1px solid grey;
-}
-
-.sfia-table td.root_key {
-  color: white;
 }
 
 .sfia-table td.root_key:empty {
