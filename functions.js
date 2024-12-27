@@ -90,7 +90,7 @@ function exportCSV() {
 
     for (var i = 0, box; (box = checked_boxes[i]) !== undefined; i++) {
         var json_data = JSON.parse(box.getAttribute('sfia-data'));
-        data.push([json_data.skill+" "+sfia_json[json_data.category][json_data.subCategory][json_data.skill]["code"]+"-"+json_data.level, sfia_json[json_data.category][json_data.subCategory][json_data.skill]["description"],sfia_json[json_data.category][json_data.subCategory][json_data.skill]["levels"][json_data.level]]);
+        data.push([json_data.skill + " " + sfia_json[json_data.category][json_data.subCategory][json_data.skill]["code"] + "-" + json_data.level, sfia_json[json_data.category][json_data.subCategory][json_data.skill]["description"], stripNewLinesFromCsv(sfia_json[json_data.category][json_data.subCategory][json_data.skill]["levels"][json_data.level])]);
     }
 
     var csvContent = "";
@@ -123,6 +123,33 @@ function exportHTML() {
     document.body.appendChild(a);
     a.click();
     a.remove();
+}
+
+function escapeHtml(unsafe) {
+    return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function convertNewlinesToHTML(text) {
+    if (typeof text !== 'string') {
+        return text;
+    }
+
+    // Replace \r\n, \n, and \r with <br> tags.
+    return escapeHtml(text).replace(/\r\n|\r|\n/g, '<br>');
+}
+
+function stripNewLinesFromCsv(text) {
+    if (typeof text !== 'string') {
+        return text;
+    }
+
+    // Replace \r\n, \n, and \r with whitespace.
+    return text.replace(/\r\n|\r|\n/g, ' ');
 }
 
 function renderOutput() {
@@ -189,7 +216,7 @@ function renderOutput() {
                     html.appendChild(level_ele);
 
                     var level_description_ele = document.createElement('p');
-                    level_description_ele.textContent = new_arr[category][subCategory][skill]["levels"][level];
+                    level_description_ele.innerHTML = convertNewlinesToHTML(new_arr[category][subCategory][skill]["levels"][level]);
                     html.appendChild(level_description_ele);
 
                 }
