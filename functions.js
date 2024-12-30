@@ -37,9 +37,15 @@ for (var root_key in sfia_json) {
             row.appendChild(col3);
 
             var skill_span = document.createElement('span');
-            skill_span.textContent = skill_key + " - " + sfia_json[root_key][sub_key][skill_key]["code"];
+            skill_span.textContent = skill_key + " - ";
             skill_span.title = sfia_json[root_key][sub_key][skill_key]["description"];
             col3.appendChild(skill_span);
+
+            var sfia_link = document.createElement('a');
+            sfia_link.href = sfia_json[root_key][sub_key][skill_key]["url"];
+            sfia_link.textContent = sfia_json[root_key][sub_key][skill_key]["code"];
+            sfia_link.target = '_blank';
+            skill_span.appendChild(sfia_link);
 
             for (var i = 1; i < 8; i++) {
                 row.appendChild(addSelectionBox(i));
@@ -148,8 +154,8 @@ function stripNewLinesFromCsv(text) {
         return text;
     }
 
-    // Replace \r\n, \n, and \r with whitespace.
-    return text.replace(/\r\n|\r|\n/g, ' ');
+    // Remove \r\n, \n, and \r.
+    return text.replace(/\r\n|\r|\n/g, '');
 }
 
 function renderOutput() {
